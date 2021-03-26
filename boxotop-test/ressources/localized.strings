@@ -1,0 +1,10 @@
+/* 
+  localized.strings
+  boxotop-test
+
+  Created by Loic RONZIER on 26/03/2021.
+  Copyright © 2021 Loic RONZIER. All rights reserved.
+*/
+
+"MovieList.title" = "Boxotop";
+"MovieList.search.placeholder" = "Titre du film";
