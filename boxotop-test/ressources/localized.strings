@@ -8,3 +8,9 @@
 
 "MovieList.title" = "Boxotop";
 "MovieList.search.placeholder" = "Titre du film";
+"MovieList.search.information" = "Rechercher un film (3 lettres minimum)";
+"MovieList.error" = "Aucun film trouvé";
+
+"Movie.type.series" = "Séries";
+"Movie.type.movie" = "Film";
+"Movie.type.game" = "Jeu";

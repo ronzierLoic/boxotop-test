@@ -10,6 +10,9 @@ import Swinject
 
 extension DataAssembly {
     func assembleManagers(in container: Container) {
-       
+        container.register(ApiManager.self) { _ in
+            ApiManagerImpl()
+        }
+        .inObjectScope(.container)
     }
 }

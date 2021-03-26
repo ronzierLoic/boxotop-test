@@ -12,7 +12,6 @@
         <!--Movie List View Controller-->
         <scene sceneID="xwC-bC-QIc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wxh-z2-cdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MovieListViewController" id="fes-TV-fWx" customClass="MovieListViewController" customModule="boxotop_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ES-oU-UB7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -22,20 +21,32 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rechercher un film (3 lettre minum)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czX-QC-HxR">
+                                <rect key="frame" x="16" y="442.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jGs-SK-4FD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="czX-QC-HxR" firstAttribute="centerX" secondItem="bZ6-O7-8pg" secondAttribute="centerX" id="B4o-BA-X6Z"/>
                             <constraint firstItem="jGs-SK-4FD" firstAttribute="trailing" secondItem="bZ6-O7-8pg" secondAttribute="trailing" id="Bbd-so-65s"/>
                             <constraint firstItem="jGs-SK-4FD" firstAttribute="bottom" secondItem="bZ6-O7-8pg" secondAttribute="bottom" id="Ce4-xi-BAs"/>
+                            <constraint firstItem="czX-QC-HxR" firstAttribute="centerY" secondItem="bZ6-O7-8pg" secondAttribute="centerY" id="IlU-ar-1BC"/>
+                            <constraint firstItem="jGs-SK-4FD" firstAttribute="trailing" secondItem="czX-QC-HxR" secondAttribute="trailing" constant="16" id="LT3-26-xNA"/>
+                            <constraint firstItem="czX-QC-HxR" firstAttribute="leading" secondItem="jGs-SK-4FD" secondAttribute="leading" constant="16" id="WFq-db-TCh"/>
                             <constraint firstItem="jGs-SK-4FD" firstAttribute="leading" secondItem="bZ6-O7-8pg" secondAttribute="leading" id="Xpm-xc-eyd"/>
                             <constraint firstItem="jGs-SK-4FD" firstAttribute="top" secondItem="bZ6-O7-8pg" secondAttribute="top" id="uht-zz-bbv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="czX-QC-HxR" id="qwg-OO-Xtp"/>
                         <outlet property="tableView" destination="bZ6-O7-8pg" id="PnD-G9-1s1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxh-z2-cdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-30" y="41"/>
         </scene>
