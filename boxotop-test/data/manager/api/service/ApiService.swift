@@ -17,6 +17,7 @@ private enum ApiServiceValues {
     static let apiKeyValues = "93858421"
     
     static let searchKey = "s"
+    static let idKey = "i"
 }
 
 struct ApiService: TargetType, AccessTokenAuthorizable {
@@ -59,6 +60,21 @@ extension ApiService {
         var params: [String: Any] = [:]
         params[ApiServiceValues.apiKey] = ApiServiceValues.apiKeyValues
         params[ApiServiceValues.searchKey] = search
+        
+        return ApiService(
+            path: "",
+            method: .get,
+            task: .requestParameters(parameters: params, encoding: URLEncoding.default)
+        )
+    }
+
+    /// Retrieve movies detail
+    /// - HTTP Method: GET
+    /// - Response: MovieRemoteEntity
+    static func getMovie(by id: String) -> ApiService {
+        var params: [String: Any] = [:]
+        params[ApiServiceValues.apiKey] = ApiServiceValues.apiKeyValues
+        params[ApiServiceValues.idKey] = id
         
         return ApiService(
             path: "",

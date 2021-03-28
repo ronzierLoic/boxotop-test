@@ -6,6 +6,8 @@
   Copyright © 2021 Loic RONZIER. All rights reserved.
 */
 
+"Generic.error" = "Une erreur est survenue.";
+
 "MovieList.title" = "Boxotop";
 "MovieList.search.placeholder" = "Titre du film";
 "MovieList.search.information" = "Rechercher un film (3 lettres minimum)";
@@ -14,3 +16,4 @@
 "Movie.type.series" = "Séries";
 "Movie.type.movie" = "Film";
 "Movie.type.game" = "Jeu";
+"Movie.runtime" = "Durée: %@";

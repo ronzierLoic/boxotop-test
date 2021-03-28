@@ -39,4 +39,17 @@ extension ApiManagerImpl: ApiManager {
                 return movies
             })
     }
+    
+    func getMovie(by id: String) -> Single<MovieEntity> {
+        apiProvider
+            .rx
+            .request(ApiService.getMovie(by: id))
+            .map(MovieEntity.self)
+            .map({
+                guard $0.response == "True" else {
+                    throw ApiError.notFound
+                }
+                return $0
+            })
+    }
 }
