@@ -20,4 +20,26 @@ extension UIView {
     func applyCircleRender() {
         self.layer.cornerRadius = self.frame.height / 2
     }
+    
+    /// Apply corner radius on the specific corners of the view
+    ///
+    /// Parameter:
+    /// - corner: Array of corner
+    /// - radius: Radius of corner
+    func roundSpecificCorners(corners: UIRectCorner, radius: CGFloat) {
+        let cornerMasks = [
+            corners.contains(.topLeft) ? CACornerMask.layerMinXMinYCorner : nil,
+            corners.contains(.topRight) ? CACornerMask.layerMaxXMinYCorner : nil,
+            corners.contains(.bottomLeft) ? CACornerMask.layerMinXMaxYCorner : nil,
+            corners.contains(.bottomRight) ? CACornerMask.layerMaxXMaxYCorner : nil,
+            corners.contains(.allCorners) ? [CACornerMask.layerMinXMinYCorner, CACornerMask.layerMaxXMinYCorner, CACornerMask.layerMinXMaxYCorner, CACornerMask.layerMaxXMaxYCorner] : nil
+        ].compactMap({ $0 })
+        
+        var maskedCorners: CACornerMask = []
+        cornerMasks.forEach { mask in maskedCorners.insert(mask) }
+        
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        self.layer.maskedCorners = maskedCorners
+    }
 }
