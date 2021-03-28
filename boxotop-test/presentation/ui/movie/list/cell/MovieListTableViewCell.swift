@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieListTableViewCell: UITableViewCell {
     // MARK: - Outlets
@@ -23,5 +24,11 @@ class MovieListTableViewCell: UITableViewCell {
             $0.applyCircleRender()
         })
     }
+    
+    func setup(movie: MovieSearchDataWrapper) {
+        movieTitleLabel.text = movie.title
+        movieTypeLabel.text = movie.type
+        movieDateLabel.text = movie.years
+        movieImageView.kf.setImage(with: movie.imageUrl)
+    }
 }
-

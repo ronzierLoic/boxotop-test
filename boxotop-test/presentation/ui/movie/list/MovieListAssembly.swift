@@ -14,8 +14,8 @@ class MovieListAssembly: Assembly {
             MovieListNavigator()
         }
         
-        container.register(MovieListViewModel.self) { _ in
-            MovieListViewModel()
+        container.register(MovieListViewModel.self) { resolver in
+            MovieListViewModel(movieRepository: resolver.forceResolve(MovieRepository.self))
         }
         
         container.register(MovieListViewController.self) { _ in
