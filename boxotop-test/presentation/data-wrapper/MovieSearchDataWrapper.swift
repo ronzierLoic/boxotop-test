@@ -15,6 +15,10 @@ class MovieSearchDataWrapper {
         self.movieSearch = movieSearch
     }
     
+    var id: String {
+        movieSearch.imdbID
+    }
+    
     var title: String {
         movieSearch.title
     }

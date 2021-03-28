@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F88EB0D260E0C6000A4E827 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88EB09260E0C6000A4E827 /* MovieDetailViewController.swift */; };
+		9F88EB0E260E0C6000A4E827 /* MovieDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88EB0A260E0C6000A4E827 /* MovieDetailAssembly.swift */; };
+		9F88EB0F260E0C6000A4E827 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88EB0B260E0C6000A4E827 /* MovieDetailViewModel.swift */; };
+		9F88EB12260E0C7100A4E827 /* MovieDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F88EB11260E0C7100A4E827 /* MovieDetailViewController.storyboard */; };
+		9F88EB162611104500A4E827 /* MovieDetailViewControllerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88EB152611104500A4E827 /* MovieDetailViewControllerValues.swift */; };
 		9F8DBEC4260DE57B003FA800 /* localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F8DBEC3260DE57B003FA800 /* localized.strings */; };
 		9F8DBEC7260DE591003FA800 /* MovieListViewControllerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DBEC6260DE591003FA800 /* MovieListViewControllerValues.swift */; };
 		9F8DBECC260DE5B4003FA800 /* MovieListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DBECA260DE5B4003FA800 /* MovieListTableViewCell.swift */; };
@@ -49,6 +54,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F88EB09260E0C6000A4E827 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		9F88EB0A260E0C6000A4E827 /* MovieDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailAssembly.swift; sourceTree = "<group>"; };
+		9F88EB0B260E0C6000A4E827 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		9F88EB11260E0C7100A4E827 /* MovieDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetailViewController.storyboard; sourceTree = "<group>"; };
+		9F88EB152611104500A4E827 /* MovieDetailViewControllerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewControllerValues.swift; sourceTree = "<group>"; };
 		9F8DBEC3260DE57B003FA800 /* localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = localized.strings; sourceTree = "<group>"; };
 		9F8DBEC6260DE591003FA800 /* MovieListViewControllerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewControllerValues.swift; sourceTree = "<group>"; };
 		9F8DBECA260DE5B4003FA800 /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +174,18 @@
 			path = "data-wrapper";
 			sourceTree = "<group>";
 		};
+		9F8DBF03260E0B7F003FA800 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				9F88EB09260E0C6000A4E827 /* MovieDetailViewController.swift */,
+				9F88EB0A260E0C6000A4E827 /* MovieDetailAssembly.swift */,
+				9F88EB0B260E0C6000A4E827 /* MovieDetailViewModel.swift */,
+				9F88EB11260E0C7100A4E827 /* MovieDetailViewController.storyboard */,
+				9F88EB152611104500A4E827 /* MovieDetailViewControllerValues.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 		9F967E3E260DE1B000D34C3F /* list */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +275,7 @@
 		9FC3B0FF250677A60074D6ED /* movie */ = {
 			isa = PBXGroup;
 			children = (
+				9F8DBF03260E0B7F003FA800 /* detail */,
 				9F967E3E260DE1B000D34C3F /* list */,
 			);
 			path = movie;
@@ -381,6 +404,7 @@
 				9F8DBECD260DE5B4003FA800 /* MovieListTableViewCell.xib in Resources */,
 				9F8DBEC4260DE57B003FA800 /* localized.strings in Resources */,
 				9FC3B11825067F480074D6ED /* MovieListViewController.storyboard in Resources */,
+				9F88EB12260E0C7100A4E827 /* MovieDetailViewController.storyboard in Resources */,
 				9FC3B0DB25066D660074D6ED /* LaunchScreen.storyboard in Resources */,
 				9FC3B0D825066D660074D6ED /* Assets.xcassets in Resources */,
 			);
@@ -440,6 +464,7 @@
 				9FC3B0F9250675F70074D6ED /* Router.swift in Sources */,
 				9F8DBEF5260DF056003FA800 /* MovieSearchEntity.swift in Sources */,
 				9F8DBEEC260DEF27003FA800 /* MovieRepository.swift in Sources */,
+				9F88EB0E260E0C6000A4E827 /* MovieDetailAssembly.swift in Sources */,
 				9F8DBEC7260DE591003FA800 /* MovieListViewControllerValues.swift in Sources */,
 				9F8DBEE8260DEB53003FA800 /* ApiService.swift in Sources */,
 				9FC3B10D25067E630074D6ED /* ViewControllerProvider.swift in Sources */,
@@ -449,9 +474,11 @@
 				9FC3B0CF25066D640074D6ED /* AppDelegate.swift in Sources */,
 				9FC3B106250677B80074D6ED /* MovieListAssembly.swift in Sources */,
 				9FC3B11225067EBF0074D6ED /* PresentationAssembly.swift in Sources */,
+				9F88EB0F260E0C6000A4E827 /* MovieDetailViewModel.swift in Sources */,
 				9F8DBED1260DE5FE003FA800 /* MovieListTableViewCellValues.swift in Sources */,
 				9FC3B11D250681480074D6ED /* AppNavigator.swift in Sources */,
 				9FC3B121250682520074D6ED /* DataAssembly+Managers.swift in Sources */,
+				9F88EB0D260E0C6000A4E827 /* MovieDetailViewController.swift in Sources */,
 				9FC3B107250677B80074D6ED /* MovieListViewModel.swift in Sources */,
 				9FC3B0EA2506740C0074D6ED /* R.generated.swift in Sources */,
 				9FC3B11625067EF00074D6ED /* DataAssembly.swift in Sources */,
@@ -463,6 +490,7 @@
 				9FC3B104250677B80074D6ED /* MovieListNavigator.swift in Sources */,
 				9FC3B0FC250676310074D6ED /* Presentable.swift in Sources */,
 				9FC3B125250682640074D6ED /* DataAssembly+Repositories.swift in Sources */,
+				9F88EB162611104500A4E827 /* MovieDetailViewControllerValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

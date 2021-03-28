@@ -126,6 +126,10 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigator.navigate(to: .detail(id: movieList[indexPath.row].id))
+    }
 }
 
 

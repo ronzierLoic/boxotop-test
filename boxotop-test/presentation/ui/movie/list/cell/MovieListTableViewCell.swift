@@ -17,6 +17,12 @@ class MovieListTableViewCell: UITableViewCell {
     @IBOutlet private weak var movieTypeLabel: UILabel!
     @IBOutlet private weak var movieDateLabel: UILabel!
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.isHighlighted = false
+        self.selectionStyle = .none
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         movieImageView.applyCornerRadius(withRadius: MovieListTableViewCellValues.MOVIE_IMAGE_CORNER_RADIUS)
