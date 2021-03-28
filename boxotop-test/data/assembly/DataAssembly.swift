@@ -11,8 +11,6 @@ import Swinject
 class DataAssembly: Assembly {
     func assemble(container: Container) {
         assembleManagers(in: container)
-        assembleBusinessHelpers(in: container)
         assembleRepositories(in: container)
-        assembleMappers(in: container)
     }
 }

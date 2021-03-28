@@ -33,13 +33,14 @@ class AppNavigator: Navigator {
 
 private extension AppNavigator {
     func makeViewContoller(destination: Destination) -> Presentable {
-        guard let viewControllerProvider = viewControllerProvider else {
+        guard let viewControllerProvider = viewControllerProvider,
+              let router = router else {
                 return UIViewController()
         }
         
         switch destination {
         case .initial:
-            return viewControllerProvider.initialViewControler()
+            return viewControllerProvider.movieListViewControler(router: router)
         }
     }
 }

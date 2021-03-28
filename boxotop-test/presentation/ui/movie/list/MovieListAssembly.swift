@@ -10,18 +10,18 @@ import Swinject
 
 class MovieListAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(MovieListNavigator.self) { _ in
-            MovieListNavigator()
+        container.register(MovieListNavigator.self) { (_: Resolver, viewControllerProvider: ViewControllerProvider, router: Router) in
+            MovieListNavigator(viewControllerProvider: viewControllerProvider, router: router)
         }
         
-        container.register(MovieListViewModel.self) { _ in
-            MovieListViewModel()
+        container.register(MovieListViewModel.self) { resolver in
+            MovieListViewModel(movieRepository: resolver.forceResolve(MovieRepository.self))
         }
         
-        container.register(MovieListViewController.self) { _ in
+        container.register(MovieListViewController.self) { (_: Resolver, viewControllerProvider: ViewControllerProvider, router: Router) in
             MovieListViewController.makeViewController(
                 viewModel: container.forceResolve(MovieListViewModel.self),
-                navigator: container.forceResolve(MovieListNavigator.self)
+                navigator: container.forceResolve(MovieListNavigator.self, arguments: viewControllerProvider, router)
             )
         }
     }

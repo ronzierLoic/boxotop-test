@@ -10,6 +10,9 @@ import Swinject
 
 extension DataAssembly {
     func assembleRepositories(in container: Container) {
-        
+        container.register(MovieRepository.self) { resolver in
+            MovieRepository(apiManager: resolver.forceResolve(ApiManager.self))
+        }
+        .inObjectScope(.container)
     }
 }
