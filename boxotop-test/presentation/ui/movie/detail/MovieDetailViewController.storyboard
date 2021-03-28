@@ -164,12 +164,21 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="wtt-tS-Caw"/>
                                                 </constraints>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykx-T8-Ph9">
-                                                <rect key="frame" x="132" y="314" width="150" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykx-T8-Ph9">
+                                                <rect key="frame" x="144.5" y="314" width="125" height="30"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4Hu-F5-2gn">
+                                                        <rect key="frame" x="4" y="4" width="117" height="22"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40478847789115646" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="5LU-7m-5zC"/>
+                                                    <constraint firstAttribute="width" constant="125" id="5LU-7m-5zC"/>
                                                     <constraint firstAttribute="height" constant="30" id="EBa-HF-g4d"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4Hu-F5-2gn" secondAttribute="trailing" constant="4" id="QIQ-J8-X9l"/>
+                                                    <constraint firstItem="4Hu-F5-2gn" firstAttribute="leading" secondItem="Ykx-T8-Ph9" secondAttribute="leading" constant="4" id="Tty-KE-P3K"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4Hu-F5-2gn" secondAttribute="bottom" constant="4" id="nWl-bi-nEu"/>
+                                                    <constraint firstItem="4Hu-F5-2gn" firstAttribute="top" secondItem="Ykx-T8-Ph9" secondAttribute="top" constant="4" id="pLy-VT-lNG"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -221,7 +230,8 @@
                         <outlet property="plotLabel" destination="rBu-Gf-E0s" id="ev0-1r-o84"/>
                         <outlet property="plotTitleLabel" destination="3Gq-Up-ub9" id="Z2o-vl-sfN"/>
                         <outlet property="plotTitleStackView" destination="t1S-Nn-gVD" id="lVb-OB-yts"/>
-                        <outlet property="raitingView" destination="Ykx-T8-Ph9" id="03J-XS-IT1"/>
+                        <outlet property="ratingStackView" destination="4Hu-F5-2gn" id="4gK-7d-6MA"/>
+                        <outlet property="ratingView" destination="Ykx-T8-Ph9" id="03J-XS-IT1"/>
                         <outlet property="runtimeLabel" destination="Wbt-op-zql" id="TUV-Q5-wkB"/>
                         <outlet property="titleLabel" destination="apL-JJ-hU5" id="DqZ-vG-ygp"/>
                         <outlet property="typesContainer" destination="weh-p2-wyn" id="Zv6-Bm-1NU"/>

@@ -13,7 +13,8 @@ class MovieDetailViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var movieImageView: UIImageView!
     
-    @IBOutlet private weak var raitingView: UIView!
+    @IBOutlet private weak var ratingView: UIView!
+    @IBOutlet private weak var ratingStackView: UIStackView!
     
     @IBOutlet private weak var typesContainer: UIView!
     @IBOutlet private weak var typesLabel: UILabel!
@@ -58,7 +59,8 @@ extension MovieDetailViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         informationContainer.roundSpecificCorners(corners: [.topLeft, .topRight], radius: MovieDetailViewControllerValues.INFORMATION_VIEW_CORNER_RADIUS)
         typesContainer.applyCircleRender()
-        [titleLabel, genreLabel, runtimeLabel, plotTitleStackView, writerStackView, actorsStackView, typesContainer].forEach { $0?.isHidden = true }
+        ratingView.applyCircleRender()
+        [titleLabel, genreLabel, runtimeLabel, plotTitleStackView, writerStackView, actorsStackView, typesContainer, ratingView].forEach { $0?.isHidden = true }
     }
     
     func setupDetail(movie: MovieDataWrapper) {
@@ -84,6 +86,9 @@ extension MovieDetailViewController {
         
         actorsStackView.isHidden = movie.actors == nil
         actorsLabel.text = movie.actors
+        
+        ratingView.isHidden = movie.rating == nil
+        setupRating(rating: movie.rating ?? 0)
     }
     
     func bindViewModel() {
@@ -112,6 +117,20 @@ extension MovieDetailViewController {
     func loadViewModel() {
         viewModel.retrieveMovie()
         activityIndicator.startAnimating()
+    }
+    
+    func setupRating(rating: Int) {
+        for index in 0..<5 {
+            let imageView = UIImageView(image: UIImage(systemName: "star.fill"))
+            imageView.tintColor = .systemGray2
+            imageView.contentMode = .scaleAspectFit
+            
+            if index < rating {
+                imageView.tintColor = .yellow
+            }
+            
+            ratingStackView.addArrangedSubview(imageView)
+        }
     }
 }
 

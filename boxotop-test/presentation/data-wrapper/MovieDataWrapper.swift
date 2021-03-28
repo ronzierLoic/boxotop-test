@@ -57,4 +57,9 @@ class MovieDataWrapper {
             return movie.type
         }
     }
+    
+    var rating: Int? {
+        guard let rating = Double(movie.imdbRating ?? "") else { return nil }
+        return Int(round(rating / 2))
+    }
 }
