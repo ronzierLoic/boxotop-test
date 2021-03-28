@@ -18,4 +18,8 @@ class MovieRepository {
     func retieveMovies(search: String) -> Single<[MovieSearchEntity]> {
         apiManager.getMovies(search: search)
     }
+    
+    func retrieveMovie(by id: String) -> Single<MovieEntity> {
+        apiManager.getMovie(by: id)
+    }
 }

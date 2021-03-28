@@ -114,6 +114,8 @@ extension MovieListViewController: UISearchBarDelegate {
 // MARK: - SearchBar delegate
 extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.isScrollEnabled = movieList.count != 0
+        
         return movieList.count
     }
     

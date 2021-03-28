@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class MovieDetailViewController: UIViewController {
     // MARK: - Outlets
@@ -34,13 +35,20 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet private weak var actorsTitleLabel: UILabel!
     @IBOutlet private weak var actorsLabel: UILabel!
     
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: - Properties
     private var viewModel: MovieDetailViewModel!
+    
+    private var disposeBag = DisposeBag()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindViewModel()
+        loadViewModel()
     }
 }
 
@@ -50,7 +58,60 @@ extension MovieDetailViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         informationContainer.roundSpecificCorners(corners: [.topLeft, .topRight], radius: MovieDetailViewControllerValues.INFORMATION_VIEW_CORNER_RADIUS)
         typesContainer.applyCircleRender()
+        [titleLabel, genreLabel, runtimeLabel, plotTitleStackView, writerStackView, actorsStackView, typesContainer].forEach { $0?.isHidden = true }
+    }
+    
+    func setupDetail(movie: MovieDataWrapper) {
+        movieImageView.kf.setImage(with: movie.imagerUrl)
         
+        titleLabel.isHidden = false
+        titleLabel.text = movie.title
+        
+        genreLabel.isHidden = movie.genre == nil
+        genreLabel.text = movie.genre
+        
+        runtimeLabel.isHidden = movie.runtime == nil
+        runtimeLabel.text = movie.runtime
+        
+        typesContainer.isHidden = false
+        typesLabel.text = movie.type
+        
+        plotTitleStackView.isHidden = movie.plot == nil
+        plotLabel.text = movie.plot
+        
+        writerStackView.isHidden = movie.writer == nil
+        writerLabel.text = movie.writer
+        
+        actorsStackView.isHidden = movie.actors == nil
+        actorsLabel.text = movie.actors
+    }
+    
+    func bindViewModel() {
+        viewModel
+            .movie
+            .subscribe(onNext: { [weak self] movie in
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
+                
+                self?.setupDetail(movie: movie)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .error
+            .subscribe(onNext: { [weak self] _ in
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
+                
+                self?.errorLabel.isHidden = false
+                self?.errorLabel.text = R.string.localized.genericError()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func loadViewModel() {
+        viewModel.retrieveMovie()
+        activityIndicator.startAnimating()
     }
 }
 

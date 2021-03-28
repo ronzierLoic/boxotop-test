@@ -10,5 +10,5 @@ import RxSwift
 
 protocol ApiManager {
     func getMovies(search: String) -> Single<[MovieSearchEntity]>
+    func getMovie(by id: String) -> Single<MovieEntity>
 }
-

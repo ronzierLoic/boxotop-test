@@ -36,8 +36,8 @@ private extension MovieListNavigator {
         guard let viewControllerProvider = viewControllerProvider else { return UIViewController() }
         
         switch destination {
-        case .detail:
-            return viewControllerProvider.movieDetailViewController()
+        case .detail(let idMovie):
+            return viewControllerProvider.movieDetailViewController(idMovie: idMovie)
         }
     }
 }
