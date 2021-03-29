@@ -17,3 +17,6 @@
 "Movie.type.movie" = "Film";
 "Movie.type.game" = "Jeu";
 "Movie.runtime" = "Durée: %@";
+"Movie.plot.title" = "Synopsis";
+"Movie.writer.title" = "Réalisateur";
+"Movie.actors.titles" = "Acteurs";

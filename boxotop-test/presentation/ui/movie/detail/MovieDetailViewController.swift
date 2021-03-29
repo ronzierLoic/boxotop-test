@@ -61,6 +61,9 @@ extension MovieDetailViewController {
         typesContainer.applyCircleRender()
         ratingView.applyCircleRender()
         [titleLabel, genreLabel, runtimeLabel, plotTitleStackView, writerStackView, actorsStackView, typesContainer, ratingView].forEach { $0?.isHidden = true }
+        plotTitleLabel.text = R.string.localized.moviePlotTitle()
+        writerTitleLabel.text = R.string.localized.movieWriterTitle()
+        actorsTitleLabel.text = R.string.localized.movieActorsTitles()
     }
     
     func setupDetail(movie: MovieDataWrapper) {
